@@ -1,0 +1,184 @@
+/* assets/css/home.css */
+
+/* --- HEADER Y MENÚ --- */
+.space-between {
+    justify-content: space-between;
+}
+
+/* Menú Lateral Deslizante */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -280px; /* Oculto a la derecha */
+    width: 260px;
+    height: 100%;
+    background: var(--bg-card);
+    border-left: 1px solid #333;
+    z-index: 3000;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+.side-menu.active {
+    right: 0; /* Aparece */
+}
+
+.menu-nav {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.menu-link:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* --- DASHBOARD CARD --- */
+.home-container {
+    padding-bottom: 80px; /* Espacio para no chocar con el borde inferior */
+}
+
+.dashboard-card {
+    background: linear-gradient(145deg, #1e1e1e, #252525);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.last-workout-info h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+/* --- HERO SECTION (BOTÓN GIGANTE) --- */
+.hero-section {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.big-cta-btn {
+    width: 100%;
+    height: 120px; /* Bien alto */
+    background: linear-gradient(135deg, var(--primary), #2563eb);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.big-cta-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 10px rgba(59, 130, 246, 0.2);
+}
+
+.cta-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.cta-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- ACCESO RÁPIDO (GRID) --- */
+.quick-access {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+    gap: 12px;
+}
+
+.shortcut-btn {
+    background: var(--bg-card);
+    border: 1px solid #333;
+    color: var(--text-main);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.shortcut-btn:hover {
+    background: #2a2a2a;
+    border-color: var(--primary);
+}
+
+/* --- BOTÓN HISTORIAL --- */
+.secondary-btn {
+    display: block;
+    text-align: center;
+    background: transparent;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+    background: #222;
+    color: white;
+    border-color: #666;
+}
+
+/* Lista de rutinas en el Modal */
+.routines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.routine-option {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    padding: 15px;
+    color: white;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1rem;
+}

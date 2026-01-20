@@ -3,32 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gym Tracker</title>
+    <title>Gym Tracker - Home</title>
     
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/variables.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/layout.css">
     <link rel="stylesheet" href="./assets/css/components.css">
-    <link rel="stylesheet" href="./assets/css/blocks.css">
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="./assets/css/home.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-content">
-            <h1>Entreno de Hoy</h1>
-            <a href="calendar.html" class="icon-btn" aria-label="Histórico">📅</a>
+
+    <header class="main-header space-between">
+        <div class="brand">
+            <h1>Gym Tracker 💪</h1>
         </div>
+        <button id="menu-btn" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
     </header>
 
-    <main class="container">
-        <div id="workout-container">
-            <div class="loading-state">
-                <p>Cargando rutina...</p>
+    <div id="side-menu" class="side-menu">
+        <button id="close-menu" class="close-btn">&times;</button>
+        <nav class="menu-nav">
+            <a href="admin.html" class="menu-link">⚙️ Gestión de Ejercicios</a>
+            <a href="#" class="menu-link">👤 Perfil de Usuario</a>
+            <a href="#" class="menu-link">📊 Estadísticas Avanzadas</a>
+        </nav>
+    </div>
+
+    <main class="container home-container">
+        
+        <section class="dashboard-card">
+            <h3 class="card-label">Última Sesión</h3>
+            <div class="last-workout-info">
+                <h2 id="last-workout-name">Cargando...</h2>
+                <p id="last-workout-date" class="text-muted">--/--/----</p>
             </div>
-        </div>
+        </section>
+
+        <section class="hero-section">
+            <button id="start-session-btn" class="big-cta-btn">
+                <span class="cta-icon">⚡</span>
+                <span class="cta-text">EMPEZAR SESIÓN</span>
+            </button>
+        </section>
+
+        <section class="quick-access">
+            <h3 class="section-title">Acceso Rápido</h3>
+            <div class="shortcuts-grid">
+                <button class="shortcut-btn" data-type="pecho">🦍 Pecho</button>
+                <button class="shortcut-btn" data-type="espalda">🦅 Espalda</button>
+                <button class="shortcut-btn" data-type="pierna">🦖 Pierna</button>
+                <button class="shortcut-btn" data-type="brazos">💪 Brazos</button>
+                <button class="shortcut-btn" data-type="spinning">🚴 Spinning</button>
+                <button class="shortcut-btn" data-type="crossfit">🔥 CrossFit</button>
+            </div>
+        </section>
+
+        <section class="footer-actions">
+            <a href="calendar.html" class="secondary-btn full-width">
+                📅 Ver Historial Completo
+            </a>
+        </section>
+
     </main>
 
-    <script type="module" src="./assets/js/app.js"></script>
+    <div id="selection-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="close-selection-modal" class="close-btn">&times;</span>
+            <h3>¿Qué toca hoy?</h3>
+            <div id="routines-list" class="routines-list">
+                <button class="routine-option">Rutina A (Empuje)</button>
+                <button class="routine-option">Rutina B (Tirón)</button>
+                <button class="routine-option">Full Body</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/homeApp.js"></script>
 </body>
 </html>
