@@ -1,6 +1,6 @@
 // assets/js/render/renderWorkout.js
 
-// Diccionario de colores (igual que antes)
+// Diccionario de colores
 const typeLabels = {
     movilidad_activacion: { text: "Movilidad (Antes)", color: "var(--accent)" },
     fuerza: { text: "Fuerza Principal", color: "var(--primary)" },
@@ -9,10 +9,15 @@ const typeLabels = {
     recovery: { text: "Recuperación", color: "#8b5cf6" }
 };
 
-export function renderWorkout(data) {
-    const container = document.getElementById("workout-container");
+// MODIFICADO: Aceptamos un segundo parámetro "containerId".
+// Si no le decimos nada, usará 'workout-container' por defecto (para que siga funcionando el index).
+export function renderWorkout(data, containerId = "workout-container") {
+    const container = document.getElementById(containerId);
     
-    // 1. Limpiamos la pantalla
+    // Seguridad: Si no encuentra el contenedor (por ejemplo, si estamos en una página que no lo tiene), paramos.
+    if (!container) return;
+
+    // 1. Limpiamos la pantalla (o el modal)
     container.innerHTML = "";
 
     // 2. Pintamos el Título del Entreno
