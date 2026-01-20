@@ -11,6 +11,29 @@
     <link rel="stylesheet" href="./assets/css/layout.css">
     <link rel="stylesheet" href="./assets/css/components.css">
     <link rel="stylesheet" href="./assets/css/home.css">
+
+    <style>
+    /* BLOQUEO DE SCROLLBAR FORZOSO */
+    html, body {
+        scrollbar-width: none !important; /* Firefox */
+        -ms-overflow-style: none !important; /* IE y Edge */
+        overflow-y: auto; /* Permite scroll pero oculta la barra */
+    }
+    
+    /* Chrome, Safari, Opera */
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        background: transparent !important;
+    }
+
+    /* Asegurar que el contenido no se corte */
+    body {
+        width: 100%;
+        overflow-x: hidden; /* Evita scroll horizontal */
+    }
+</style>
 </head>
 <body>
 
