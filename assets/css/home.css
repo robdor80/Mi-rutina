@@ -234,3 +234,25 @@ html, body {
     scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;  /* IE y Edge */
 }
+
+/* --- MUERTE A LAS BARRAS DE SCROLL (NIVEL EXTREMO) --- */
+
+/* 1. Ocultar en TODOS los elementos (Universal) */
+*::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* 2. Asegurar que body y html no la muestren */
+html, body {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+    overflow-x: hidden; /* Evitar scroll horizontal accidental */
+}
+
+/* 3. Asegurar que el modal se vea cuando se activa */
+/* REVISA QUE TENGAS ESTO ASÍ EXACTAMENTE */
+.modal-overlay.active {
+    display: flex !important; /* El !important aquí es vital para ganar al display:none anterior */
+}
