@@ -1,0 +1,8 @@
+:root {
+    --bg-app: #0f1115;
+    --bg-card: #1c1e24;
+    --text-main: #e2e8f0;
+    --primary: #3b82f6;
+    --font-main: -apple-system, sans-serif;
+    --header-height: 60px;
+}
