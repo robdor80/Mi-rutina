@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body { background-color: #121212; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        button { padding: 15px; font-size: 18px; cursor: pointer; margin-top: 20px; background: #3b82f6; color: white; border: none; border-radius: 8px; }
+        textarea { width: 100%; max-width: 500px; height: 300px; background: #222; color: white; margin-top: 20px; padding: 10px; }
+        #upload-section { display: none; width: 100%; display: flex; flex-direction: column; align-items: center; }
+    </style>
+</head>
+<body>
+    <h1>PANEL DE CONTROL</h1>
+    
+    <button id="login-btn">PULSA AQUÍ PARA ENTRAR</button>
+    
+    <div id="upload-section" style="display:none;">
+        <p>Estás dentro. Pega el JSON abajo:</p>
+        <textarea id="json-input"></textarea>
+        <button id="save-btn" style="background: green;">GUARDAR</button>
+        <p id="status-msg"></p>
+    </div>
+
+    <script type="module" src="./assets/js/admin/admin.js"></script>
+</body>
+</html>
