@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial - Gym Tracker</title>
+    
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    
+    <style>
+        /* Estilos exclusivos para el calendario */
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr); /* 7 días a la semana */
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .day-cell {
+            aspect-ratio: 1; /* Cuadrados perfectos */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #666;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        /* Cuando un día tiene entreno */
+        .day-cell.has-workout {
+            border-color: var(--primary);
+            color: #fff;
+            background: rgba(59, 130, 246, 0.1); /* Azulito transparente */
+        }
+
+        /* El puntito indicador */
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin-top: 4px;
+        }
+
+        /* Día seleccionado */
+        .day-cell.selected {
+            background: var(--primary);
+            color: white;
+        }
+        .day-cell.selected .dot { background-color: white; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="icon-btn" style="text-decoration:none;">⬅️</a>
+            <h1>Historial</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="calendar-header">
+            <button id="prev-month" class="icon-btn">◀</button>
+            <h2 id="current-month-label" style="font-size: 1.2rem;">Cargando...</h2>
+            <button id="next-month" class="icon-btn">▶</button>
+        </div>
+
+        <div id="calendar-grid" class="calendar-grid"></div>
+
+        <div id="selected-workout-container">
+            <p style="text-align:center; color: #666; margin-top: 40px;">
+                Selecciona un día con punto azul 🔵 para ver el entreno.
+            </p>
+        </div>
+    </main>
+
+    <script type="module" src="./assets/js/calendarApp.js"></script>
+</body>
+</html>
